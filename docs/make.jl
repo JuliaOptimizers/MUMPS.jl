@@ -5,8 +5,7 @@ makedocs(
   doctest = true,
   linkcheck = true,
   strict = true,
-  assets = ["assets/style.css"],
-  format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true"),
+  format = Documenter.HTML(assets = ["assets/style.css"], prettyurls = get(ENV, "CI", nothing) == "true"),
   sitename = "MUMPS.jl",
   pages = ["Home" => "index.md",
            "API" => "api.md",
@@ -14,8 +13,4 @@ makedocs(
           ]
 )
 
-deploydocs(deps = nothing, make = nothing,
-  repo = "github.com/JuliaSmoothOptimizers/MUMPS.jl.git",
-  target = "build",
-  devbranch = "master"
-)
+deploydocs(repo = "github.com/JuliaSmoothOptimizers/MUMPS.jl.git")
